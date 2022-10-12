@@ -1,18 +1,12 @@
-//you can use module.exports. to export individually
+const axios = require('axios');
 
-const REQUEST_TIMEOUT = 500;
-function encrypt(data) {
-    return 'encrypted data';
-}
-
-function send (url, data) {
-    const encryptedData = encrypt(data);
-    console.log(`sending ${encryptedData} to ${url}`);
-}
-
-module.exports = {
-    REQUEST_TIMEOUT,
-    send
-}
-
-// console.log(module);
+axios.get('https://wwww.google.com')
+.then( response => {
+    console.log(response);
+})
+.catch( err => {
+    console.log(err);
+})
+.then(() => {
+    console.log('All done')
+})
